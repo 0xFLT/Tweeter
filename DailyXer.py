@@ -19,7 +19,10 @@ api = tweepy.API(auth)
 
 # Read tweet dataset from a text file named 'AllTimeHits.txt'
 with open('AllTimeHits.txt', 'r') as file:
-    tweets_dataset = file.read().splitlines()
+    raw_tweets = file.read().split('\n\n')
+
+# Separate raw_tweets into individual multi-line tweets
+tweets_dataset = [tweet.replace('\n', ' ') for tweet in raw_tweets]
 
 # Prompt for a URL link
 article_url = input("Enter the URL of the article: ")
