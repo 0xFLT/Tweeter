@@ -18,7 +18,7 @@ auth.set_access_token(access_token, access_secret)
 api = tweepy.API(auth)
 
 # Read tweet dataset from a text file named 'AllTimeHits.txt'
-with open('AllTimeHits.txt', 'r') as file:
+with open('AllTimeHits.txt', 'r', encoding='utf-8') as file:
     raw_tweets = file.read().split('\n\n')
 
 # Separate raw_tweets into individual multi-line tweets
